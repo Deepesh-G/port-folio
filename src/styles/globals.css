@@ -1,0 +1,70 @@
+﻿/* ================================================
+   DEEPESH G PORTFOLIO – CYBERPUNK THEME (React)
+   ================================================ */
+:root {
+  --neon-green: #00ff88;
+  --neon-cyan: #00e5ff;
+  --neon-purple: #b388ff;
+  --dark-bg: #040d0d;
+  --dark-surface: #071414;
+  --dark-card: #0a1f1f;
+  --dark-card2: #0d2626;
+  --border-color: rgba(0, 255, 136, 0.15);
+  --border-hover: rgba(0, 255, 136, 0.4);
+  --text-primary: #e8f5f5;
+  --text-secondary: #8aa8a8;
+  --text-muted: #4a6a6a;
+  --font-main: 'Outfit', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-neon: 0 0 20px rgba(0, 255, 136, 0.3);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body {
+  font-family: var(--font-main);
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--dark-bg); }
+::-webkit-scrollbar-thumb { background: var(--neon-green); border-radius: 3px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 100px 0; }
+.section-dark { background: var(--dark-surface); }
+.section-header { text-align: center; margin-bottom: 64px; }
+.section-tag { display: inline-block; font-family: var(--font-mono); font-size: 0.8rem; color: var(--neon-green); margin-bottom: 10px; letter-spacing: 2px; }
+.section-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -1px; color: var(--text-primary); margin-bottom: 16px; }
+.neon { color: var(--neon-green); text-shadow: 0 0 20px rgba(0,255,136,0.4); }
+.section-line { width: 60px; height: 3px; background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan)); margin: 0 auto; border-radius: 2px; box-shadow: 0 0 12px rgba(0,255,136,0.5); }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; font-family: var(--font-main); transition: var(--transition); position: relative; overflow: hidden; cursor: pointer; }
+.btn-primary { background: var(--neon-green); color: #040d0d; box-shadow: 0 0 20px rgba(0,255,136,0.4); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 35px rgba(0,255,136,0.6), 0 8px 24px rgba(0,0,0,0.3); }
+.btn-glow { position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.5s ease; }
+.btn:hover .btn-glow { left: 100%; }
+.btn-outline { border: 1.5px solid var(--neon-green); color: var(--neon-green); background: transparent; }
+.btn-outline:hover { background: rgba(0,255,136,0.1); transform: translateY(-2px); box-shadow: var(--shadow-neon); }
+.btn-ghost { border: 1.5px solid var(--border-color); color: var(--text-secondary); background: transparent; }
+.btn-ghost:hover { border-color: var(--neon-cyan); color: var(--neon-cyan); transform: translateY(-2px); }
+.btn.small { padding: 8px 18px; font-size: 0.82rem; }
+.btn.full-width { width: 100%; justify-content: center; }
+.hidden { display: none !important; }
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes float1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes float2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+@keyframes float3 { 0%, 100% { transform: translateY(-50%); } 50% { transform: translateY(calc(-50% - 8px)); } }
+@keyframes scan { 0% { transform: translateY(-130px); opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { transform: translateY(130px); opacity: 0; } }

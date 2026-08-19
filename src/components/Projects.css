@@ -1,0 +1,210 @@
+/* ── Projects Grid ─────────────────────────────── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+/* Full-width card (NIDS) */
+.project-card.full-width {
+  grid-column: 1 / -1;
+}
+
+/* ── Card base ─────────────────────────────────── */
+.project-card {
+  background: var(--dark-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45), 0 0 14px rgba(0, 255, 136, 0.07);
+}
+
+.project-card.featured {
+  border-color: rgba(0, 255, 136, 0.22);
+}
+
+/* ── Top row ───────────────────────────────────── */
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.project-category {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.project-featured-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--neon-green);
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.22);
+  padding: 2px 9px;
+  border-radius: 100px;
+}
+
+.proj-link {
+  color: var(--text-muted);
+  transition: var(--transition);
+  padding: 5px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.proj-link:hover {
+  color: var(--neon-green);
+  background: rgba(0, 255, 136, 0.08);
+}
+
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.proj-link-live {
+  color: var(--neon-cyan);
+}
+
+.proj-link-live:hover {
+  color: var(--neon-cyan);
+  background: rgba(0, 229, 255, 0.08);
+}
+
+/* ── Title & description ───────────────────────── */
+.project-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.project-desc {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+/* ── Feature list (NIDS) ───────────────────────── */
+.project-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 12px;
+  margin-bottom: 16px;
+}
+
+/* 2-column grid layout for full-width NIDS card */
+.project-features.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 32px;
+}
+
+.project-features li {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 14px;
+  position: relative;
+}
+
+.project-features li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--neon-green);
+  font-weight: 700;
+}
+
+/* ── Tags ──────────────────────────────────────── */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color);
+}
+
+.proj-tag {
+  background: transparent;
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  color: var(--neon-cyan);
+  border-radius: 5px;
+  padding: 3px 9px;
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.3px;
+}
+
+/* ── Footer CTA ────────────────────────────────── */
+.projects-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ── Responsive breakpoints ────────────────────── */
+
+/* Large desktop — keep 2 cols */
+@media (max-width: 1400px) {
+  .projects-grid { gap: 18px; }
+}
+
+/* Tablet landscape — still 2 cols */
+@media (max-width: 1024px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .project-card.full-width { grid-column: 1 / -1; }
+  .project-features.features-grid { grid-template-columns: 1fr 1fr; gap: 6px 24px; }
+}
+
+/* Tablet portrait — 2 cols, tighter padding */
+@media (max-width: 768px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .project-card { padding: 20px; }
+  .project-features.features-grid { grid-template-columns: 1fr; }
+}
+
+/* Mobile — single col */
+@media (max-width: 540px) {
+  .projects-grid { grid-template-columns: 1fr; gap: 12px; }
+  .project-card.full-width { grid-column: 1; }
+  .project-features.features-grid { grid-template-columns: 1fr; }
+  .project-card { padding: 18px; }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .project-title { font-size: 0.95rem; }
+  .project-desc { font-size: 0.8rem; }
+  .proj-tag { font-size: 0.65rem; padding: 2px 7px; }
+}
+

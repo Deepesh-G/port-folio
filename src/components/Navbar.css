@@ -1,0 +1,22 @@
+﻿.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0; transition: var(--transition); }
+.navbar.scrolled { background: rgba(4,13,13,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-color); box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
+.nav-container { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 18px 24px; }
+.nav-logo { font-family: var(--font-mono); font-size: 1.3rem; font-weight: 700; color: var(--neon-green); letter-spacing: 2px; }
+.logo-bracket { color: var(--neon-cyan); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-link { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); transition: var(--transition); position: relative; padding-bottom: 4px; }
+.nav-link::after { content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--neon-green); transition: width var(--transition); box-shadow: 0 0 8px var(--neon-green); }
+.nav-link:hover, .nav-link.active { color: var(--neon-green); }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; background: none; border: none; cursor: pointer; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--neon-green); border-radius: 2px; transition: var(--transition); }
+.hamburger span.rot1 { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger span.fade { opacity: 0; }
+.hamburger span.rot2 { transform: rotate(-45deg) translate(5px, -5px); }
+@media (max-width: 768px) {
+  .nav-links { display: none; flex-direction: column; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: rgba(4,13,13,0.98); border-bottom: 1px solid var(--border-color); }
+  .nav-links.open { display: flex; }
+  .nav-link { display: block; padding: 14px 24px; border-bottom: 1px solid var(--border-color); }
+  .nav-link::after { display: none; }
+  .hamburger { display: flex; }
+}

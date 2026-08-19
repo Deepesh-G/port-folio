@@ -1,0 +1,34 @@
+﻿.hero { min-height: 100vh; display: flex; align-items: center; justify-content: space-between; gap: 60px; padding: 100px 24px 60px; max-width: 1200px; margin: 0 auto; position: relative; }
+.hero-content { flex: 1; max-width: 600px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,255,136,0.08); border: 1px solid rgba(0,255,136,0.25); border-radius: 100px; padding: 6px 16px; font-size: 0.8rem; color: var(--neon-green); font-family: var(--font-mono); margin-bottom: 24px; animation: fadeInDown 0.6s ease; }
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--neon-green); box-shadow: 0 0 8px var(--neon-green); animation: pulse 2s infinite; }
+.hero-name { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; line-height: 1; letter-spacing: -2px; margin-bottom: 20px; animation: fadeInUp 0.7s ease 0.1s both; }
+.name-line { display: inline; color: var(--text-primary); }
+.accent-g { color: transparent; -webkit-text-stroke: 2px var(--neon-green); text-shadow: 0 0 40px rgba(0,255,136,0.3); margin-left: 16px; }
+.hero-title-wrapper { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-family: var(--font-mono); font-size: clamp(0.85rem, 2vw, 1.05rem); animation: fadeInUp 0.7s ease 0.2s both; }
+.terminal-prefix { color: var(--neon-cyan); }
+.typing-text { color: var(--neon-green); }
+.cursor { color: var(--neon-green); animation: blink 1s step-end infinite; font-weight: 100; }
+.hero-desc { font-size: 1rem; color: var(--text-secondary); margin-bottom: 36px; line-height: 1.8; animation: fadeInUp 0.7s ease 0.3s both; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 48px; animation: fadeInUp 0.7s ease 0.4s both; }
+.hero-stats { display: flex; align-items: center; gap: 24px; animation: fadeInUp 0.7s ease 0.5s both; }
+.stat { text-align: center; }
+.stat-num { display: block; font-size: 1.6rem; font-weight: 800; color: var(--neon-green); text-shadow: 0 0 12px rgba(0,255,136,0.5); }
+.stat-label { font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono); }
+.stat-divider { width: 1px; height: 40px; background: var(--border-color); }
+.hero-visual { flex: 1; display: flex; justify-content: center; align-items: center; position: relative; max-width: 400px; animation: fadeIn 1s ease 0.3s both; }
+.avatar-wrapper { position: relative; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center; }
+.avatar-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(0,255,136,0.3); animation: spin linear infinite; }
+.ring-1 { width: 320px; height: 320px; animation-duration: 15s; border-style: dashed; }
+.ring-2 { width: 360px; height: 360px; animation-duration: 25s; animation-direction: reverse; border-color: rgba(0,229,255,0.2); }
+.ring-3 { width: 400px; height: 400px; animation-duration: 40s; border-color: rgba(179,136,255,0.15); }
+.avatar-img { width: 260px; height: 260px; border-radius: 50%; object-fit: cover; border: 3px solid var(--neon-green); box-shadow: 0 0 30px rgba(0,255,136,0.4), 0 0 80px rgba(0,255,136,0.15); position: relative; z-index: 2; }
+.avatar-scan { position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; width: 260px; height: 260px; border-radius: 50%; background: linear-gradient(180deg, transparent 0%, rgba(0,255,136,0.06) 50%, transparent 100%); animation: scan 3s linear infinite; z-index: 3; }
+.floating-badge { position: absolute; display: flex; align-items: center; gap: 6px; background: rgba(10,31,31,0.9); border: 1px solid var(--border-color); border-radius: 100px; padding: 8px 14px; font-size: 0.78rem; font-weight: 600; color: var(--text-primary); backdrop-filter: blur(10px); box-shadow: var(--shadow-card); white-space: nowrap; }
+.fb-icon { font-size: 1rem; }
+.fb-1 { top: 10px; left: -60px; animation: float1 4s ease-in-out infinite; }
+.fb-2 { bottom: 40px; left: -80px; animation: float2 5s ease-in-out infinite; }
+.fb-3 { top: 50%; right: -60px; transform: translateY(-50%); animation: float3 4.5s ease-in-out infinite; }
+@media (max-width: 1024px) { .hero { flex-direction: column; text-align: center; padding-top: 120px; } .hero-cta { justify-content: center; } .hero-stats { justify-content: center; } .hero-visual { max-width: 340px; } .fb-1, .fb-2, .fb-3 { display: none; } }
+@media (max-width: 768px) { .hero-visual { display: none; } .hero-name { font-size: 2.8rem; } }
+@media (max-width: 480px) { .hero { padding: 100px 16px 40px; } .hero-cta { flex-direction: column; align-items: center; } .btn { width: 100%; justify-content: center; } }

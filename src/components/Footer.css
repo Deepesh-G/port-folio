@@ -1,0 +1,10 @@
+﻿.footer { background: var(--dark-surface); border-top: 1px solid var(--border-color); padding: 40px 0; }
+.footer-inner { display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+.footer-logo { font-family: var(--font-mono); font-size: 1.3rem; font-weight: 700; }
+.footer-logo .logo-bracket { color: var(--neon-cyan); }
+.footer-logo .logo-text { color: var(--neon-green); }
+.footer-text { font-size: 0.85rem; color: var(--text-secondary); }
+.footer-sub { font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono); }
+.footer-socials { display: flex; gap: 16px; }
+.footer-socials a { width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: var(--text-muted); transition: var(--transition); }
+.footer-socials a:hover { border-color: var(--neon-green); color: var(--neon-green); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,255,136,0.2); }
