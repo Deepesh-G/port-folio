@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepesh G - Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    :root {
+      --primary: #0f172a;
+      --secondary: #334155;
+      --accent: #0284c7;
+      --border: #e2e8f0;
+      --bg: #ffffff;
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--primary);
+      background: #f8fafc;
+      line-height: 1.45;
+      font-size: 13.5px;
+      padding: 30px 20px;
+    }
+
+    .resume-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--bg);
+      padding: 40px 48px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border-radius: 8px;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 18px;
+    }
+
+    .name {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .title {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      font-size: 12.5px;
+      color: var(--secondary);
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contact-item a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-item a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    /* Section Styles */
+    section {
+      margin-bottom: 16px;
+    }
+
+    .section-heading {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #0f172a;
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .summary-text {
+      color: var(--secondary);
+      text-align: justify;
+      font-size: 13px;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      font-size: 13px;
+    }
+
+    .skill-row {
+      display: flex;
+      line-height: 1.4;
+    }
+
+    .skill-cat {
+      font-weight: 600;
+      min-width: 175px;
+      color: #1e293b;
+    }
+
+    .skill-list {
+      color: var(--secondary);
+      flex: 1;
+    }
+
+    /* Experience / Projects / Education Items */
+    .item {
+      margin-bottom: 12px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .item-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .item-tech {
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      font-weight: 500;
+      margin-left: 6px;
+    }
+
+    .item-date {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .item-sub {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--secondary);
+      margin-bottom: 4px;
+    }
+
+    .bullets {
+      list-style-type: square;
+      padding-left: 18px;
+      color: var(--secondary);
+      font-size: 12.8px;
+    }
+
+    .bullets li {
+      margin-bottom: 3px;
+      line-height: 1.45;
+    }
+
+    .bullets li strong {
+      color: #1e293b;
+    }
+
+    /* Certifications Grid */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 20px;
+      font-size: 12.8px;
+    }
+
+    .cert-item {
+      display: flex;
+      justify-content: space-between;
+      color: var(--secondary);
+    }
+
+    .cert-name {
+      font-weight: 500;
+      color: #0f172a;
+    }
+
+    .cert-issuer {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    /* Print styling */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+
+      .resume-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+
+      .no-print {
+        display: none;
+      }
+    }
+
+    .print-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0284c7;
+      color: #fff;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .print-btn:hover {
+      background: #0369a1;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn no-print" onclick="window.print()">
+    🖨️ Download / Print PDF
+  </button>
+
+  <div class="resume-container">
+    <!-- Header -->
+    <header>
+      <h1 class="name">Deepesh G</h1>
+      <div class="title">Cybersecurity Specialist &bull; Network &amp; Systems Administrator &bull; IT Engineer</div>
+      <div class="contact-bar">
+        <span class="contact-item">📍 Bangalore, India</span>
+        <span class="contact-item">📞 <a href="tel:+916063259350">+91 6063259350</a></span>
+        <span class="contact-item">✉️ <a href="mailto:deekir5010@gmail.com">deekir5010@gmail.com</a></span>
+        <span class="contact-item">💼 <a href="https://www.linkedin.com/in/deepesh-g-625038228/" target="_blank">linkedin.com/in/deepesh-g</a></span>
+        <span class="contact-item">🐙 <a href="https://github.com/Deepesh-G" target="_blank">github.com/Deepesh-G</a></span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section>
+      <h2 class="section-heading">Professional Summary</h2>
+      <p class="summary-text">
+        Proactive and detail-oriented IT graduate specializing in <strong>Cybersecurity, Network Security, and Systems Administration</strong>. Certified in Networking, Operating Systems, and Cybersecurity Fundamentals from <strong>Cisco Networking Academy</strong>. Proven hands-on experience designing real-time Intrusion Detection Systems (NIDS), packet inspection engines, automated firewall mitigation rules, and secure scalable web architectures with Python, MERN, and AI/LLM integration. Strong analytical acumen in network protocols (TCP/IP, DNS, DHCP), threat mitigation, Linux/Windows environments, and cloud infrastructure deployment.
+      </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section>
+      <h2 class="section-heading">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-row">
+          <span class="skill-cat">Security &amp; Networking:</span>
+          <span class="skill-list">Network Intrusion Detection (NIDS), Packet Analysis (Scapy, Npcap, Wireshark), Nmap, Windows Firewall API, iptables, Threat Classification, IP Blacklisting, TCP/IP, DNS, DHCP, ARP.</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-cat">Programming &amp; Backends:</span>
+          <span class="skill-list">Python (Scapy, Pandas, Joblib), JavaScript (ES6+), Node.js, Express.js, Django, RESTful APIs, WebSockets, Java.</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-cat">AI &amp; Machine Learning:</span>
+          <span class="skill-list">Hybrid ML Ensembles (LightGBM, XGBoost, Random Forest), UNSW-NB15 Dataset, LangChain, Google Gemini API, RAG Architecture, Vector Embeddings.</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-cat">Frontend &amp; Databases:</span>
+          <span class="skill-list">React (Vite), Context API, HTML5, CSS3, Streamlit, MongoDB / MongoDB Atlas Vector Search, SQLite.</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-cat">OS &amp; Cloud Tools:</span>
+          <span class="skill-list">Linux (Kali Linux, Ubuntu), Windows Server/Client, Git, GitHub, Render Cloud Platform, VS Code.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Technical Projects -->
+    <section>
+      <h2 class="section-heading">Technical Projects</h2>
+
+      <!-- Project 1 -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">LightWeight NIDS – IntruLight</span>
+            <span class="item-tech">[Python, Scapy, LightGBM, XGBoost, Gemini AI, React, WebSockets]</span>
+          </div>
+          <span class="item-date">2025 – 2026</span>
+        </div>
+        <div class="item-sub">Real-Time Network Intrusion Detection &amp; Automated Mitigation System</div>
+        <ul class="bullets">
+          <li>Architected a real-time NIDS engine capturing live network traffic and bidirectional flows via <strong>Scapy</strong> and <strong>Npcap</strong>.</li>
+          <li>Engineered a <strong>Hybrid ML Ensemble (LightGBM + XGBoost + Random Forest)</strong> trained on the <strong>UNSW-NB15</strong> dataset for multi-class attack detection and severity scoring.</li>
+          <li>Implemented automated threat mitigation with programmatic <strong>Windows Firewall IP blocking</strong> (timed/permanent rules) and repeat-offender blacklisting.</li>
+          <li>Integrated <strong>Google Gemini API</strong> for automated plain-English attack explanation, mitigation guidance, and threat summaries.</li>
+          <li>Built a real-time <strong>React dashboard</strong> streaming packet statistics via WebSockets, with dual <strong>Email and Twilio SMS</strong> security alerts.</li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">AI-Powered RAG Document Assistant</span>
+            <span class="item-tech">[Python, LangChain, Gemini API, MongoDB Atlas, Streamlit, Render]</span>
+          </div>
+          <span class="item-date">2025</span>
+        </div>
+        <div class="item-sub">Context-Aware Intelligent Document Retrieval &amp; Conversational AI</div>
+        <ul class="bullets">
+          <li>Developed an end-to-end Retrieval-Augmented Generation (RAG) chatbot using <strong>LangChain</strong> to query custom enterprise documents.</li>
+          <li>Vectorized document chunks using <strong>Google Embeddings (embedding-001)</strong> indexed within <strong>MongoDB Atlas Vector Search</strong>.</li>
+          <li>Integrated <strong>Gemini 1.5 Flash</strong> with prompt orchestration to generate grounded, hallucination-free answers with context injection.</li>
+          <li>Deployed an interactive <strong>Streamlit</strong> application on Render Cloud with session persistence and secure environment management.</li>
+        </ul>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Full-Stack Leave Management System</span>
+            <span class="item-tech">[React, Node.js, Express.js, MongoDB Atlas, JWT, Render]</span>
+          </div>
+          <span class="item-date">2024 – 2025</span>
+        </div>
+        <div class="item-sub">Enterprise Role-Based Leave Workflow &amp; Approval System &bull; <a href="https://leave-mangement-sys-frontend1.onrender.com" target="_blank">Live Demo</a></div>
+        <ul class="bullets">
+          <li>Built a secure MERN application featuring <strong>Role-Based Access Control (RBAC)</strong> for Employee and Manager roles with <strong>JWT authentication</strong>.</li>
+          <li>Implemented full leave request lifecycle (Casual, Sick, Earned) with automated balance validation and auto-deduction on manager approval.</li>
+          <li>Developed 10+ RESTful API endpoints, manager team calendar view, and responsive UI using <strong>React Context API</strong>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2 class="section-heading">Education</h2>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Master of Computer Applications (MCA)</span>
+          <span class="item-date">2024 – 2026</span>
+        </div>
+        <div class="item-sub">Dr. Ambedkar Institute of Technology &bull; Visvesvaraya Technological University (VTU), Bangalore</div>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Bachelor of Computer Applications (BCA)</span>
+          <span class="item-date">2021 – 2024</span>
+        </div>
+        <div class="item-sub">KLE Society’s Degree College &bull; Bangalore University, Bangalore</div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section>
+      <h2 class="section-heading">Certifications</h2>
+      <div class="cert-grid">
+        <div class="cert-item">
+          <span class="cert-name">&bull; Networking Basics</span>
+          <span class="cert-issuer">Cisco Networking Academy</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">&bull; Cybersecurity Fundamentals</span>
+          <span class="cert-issuer">Cisco Networking Academy</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">&bull; Operating Systems Basics</span>
+          <span class="cert-issuer">Cisco Networking Academy</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">&bull; Cyber Security Basics</span>
+          <span class="cert-issuer">TechByHeart</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">&bull; Java Backend Workshop</span>
+          <span class="cert-issuer">Learn OnLine</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
