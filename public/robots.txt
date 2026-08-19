@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dk-port-folio.vercel.app/sitemap.xml
